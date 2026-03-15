@@ -579,4 +579,9 @@ section {
     /* Logos */
     .logos-row { flex-wrap: wrap; }
 }
-
+@media screen and (max-width: 600px) {
+    #main-nav {
+        position: relative; /* Outra opção: mantém no fluxo mas permite ajustes */
+        top: auto; /* Remove o posicionamento fixo */
+    }
+}
