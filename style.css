@@ -578,6 +578,52 @@ section {
     
     /* Logos */
     .logos-row { flex-wrap: wrap; }
+
+    
+    .contact-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 25px 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(197, 160, 89, 0.3);
+    }
+    
+    /* Efeito sutil ao tocar */
+    .contact-box:active {
+        background: rgba(255, 255, 255, 0.08);
+        transform: scale(0.98);
+        transition: all 0.2s;
+    }
+    
+    /* Ajuste fino do título */
+    .contact-box h3 {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    /* Linha decorativa abaixo do título */
+    .contact-box h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: #c5a059;
+    }
+    
+    /* Botão com efeito mais suave */
+    .btn-outline {
+        border-width: 1px;
+        transition: all 0.3s;
+    }
+    
+    .btn-outline:active {
+        background-color: #c5a059;
+        border-color: #c5a059;
+        color: #121212;
+    }
 }
 @media screen and (max-width: 600px) {
     #main-nav {
