@@ -1,0 +1,582 @@
+#hero {
+    position: relative;
+    height: 100vh; /* Ocupa a tela inteira */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;    /* Centraliza horizontalmente */
+    text-align: center;
+    color: white;
+    font-family: "Georgia", "Times New Roman", serif; /* Fonte clássica do sistema */
+    overflow: hidden;
+}
+
+/* Imagem de Fundo */
+.background-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('img/museu-estrutura.jpg') no-repeat center center/cover;
+    z-index: -2;
+}
+
+/* Camada Escura (Overlay) */
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Escurece a foto para o texto aparecer */
+    z-index: -1;
+}
+
+/* Conteúdo Central */
+.content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    color: #c5a059; /* Tom dourado */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 10px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.brand {
+    display: block; /* Joga o nome Atlas para a linha de baixo */
+    font-size: 5.5rem;
+    line-height: 1;
+}
+
+.description {
+    font-style: italic;
+    line-height: 1.6;
+    margin: 30px auto;
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #ffffff
+}
+
+.thanks {
+    display: inline-block;
+    border: 1px solid #c5a059;
+    padding: 10px 25px;
+    color: #c5a059;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Rodapé "Explore" */
+.explore {
+    position: absolute;
+    bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+    color: #c5a059;
+}
+
+#main-nav {
+    background-color: #8B6914; /* Cor base da barra */
+    width: 100%;
+
+    /* Configurações para fixar */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que ela fique por cima do resto do conteúdo */
+}
+
+#main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-nav li {
+    flex: 1;
+}
+
+.nav-item {
+    display: block;
+    padding: 20px 10px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-family: "Georgia", serif;
+    text-align: center;
+    /* Transição suave para a cor não mudar de uma vez só */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.nav-item:hover {
+    background-color: #C5A059; /* O tom mais claro*/
+    color: #332606;           /* Texto escurece para contraste */
+    cursor: pointer;          /* Garante que mostre a "mão" */
+}
+
+#about {
+    background-color: #f2eee3; /* Cor de fundo bege*/
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.container-about {
+    max-width: 1000px;
+    display: flex;
+    align-items: flex-start; /* Alinha o topo da imagem com o topo do texto */
+    gap: 50px; /* Espaço entre a imagem e o texto */
+}
+
+/* Moldura da Imagem */
+.image-wrapper {
+    flex: 1;
+    border: 2px solid #c5a059; /* Borda dourada */
+    padding: 10px; /* Espaço entre a borda e a imagem */
+    line-height: 0; /* Remove espaços extras abaixo */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Conteúdo de Texto */
+.text-content {
+    flex: 1.5; /* Dá um pouco mais de espaço para o texto */
+}
+
+.tag {
+    background-color: #c5a059;
+    color: #332606;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: "Georgia", serif;
+    font-size: 2.5rem;
+    color: #8b6914;
+    margin: 0 0 20px 0;
+}
+
+p {
+    font-family: "Georgia", serif;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- Estilos Gerais da Seção de Exposição --- */
+.section-paleo {
+    background-color: #f5f1e6; /* Cor de fundo creme claro da imagem */
+    padding: 60px 20px;
+    font-family: 'Times New Roman', Times, serif; /* Fonte serifada para um visual clássico */
+    color: #333;
+}
+
+/* Container para centralizar o conteúdo e definir largura máxima */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho da Exposição --- */
+.exposicao-header {
+    border-bottom: 1px solid #c5a059;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    width: 100%; /* Linha estendida */
+}
+
+.tag-exposicao {
+    background-color: #b3965a; /* Fundo dourado/ocre para a tag */
+    color: #fff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.exposicao-header h2 {
+    font-size: 2.5rem;
+    margin: 15px 0 0;
+    color: #1a1a1a;
+}
+
+/* --- Layout Principal (Flexbox) --- */
+.exposicao-content {
+    display: flex; /* Ativa o Flexbox no container */
+    gap: 40px; /* Espaço entre as colunas de texto e imagem */
+    align-items: flex-start; /* Alinha o topo dos elementos */
+    margin-bottom: 50px;
+}
+
+/* Coluna de Texto */
+.textos {
+    flex: 1.5; /* Ocupa um pouco mais de espaço (1.5 partes) */
+}
+
+.textos p {
+    line-height: 1.7; /* Aumenta o espaçamento entre linhas para legibilidade */
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+/* Coluna de Imagem com Borda */
+.image-frame {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 0px;
+    border: 2px solid #b3965a; /* A borda fina que envolve a foto */
+    
+    /* Sombra sólida e sem desfoque para simular a moldura de fundo */
+    box-shadow: 8px 8px 0px #b3965a;
+    
+    /* Espaçamento para a sombra não bater no conteúdo de baixo */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.image-frame img {
+    width: 100%;
+    display: block;
+}
+
+/* --- Seção de Citação --- */
+.citacao {
+    background-color: #1a1a1a; /* Fundo escuro para destaque */
+    color: #f5f1e6; /* Texto claro (cor do fundo da seção) */
+    padding: 30px 40px;
+    margin: 0 0 40px 0; /* Margem apenas inferior */
+    border-left: 5px solid #b3965a; /* Barra vertical dourada à esquerda */
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.citacao footer {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #b3965a; /* Cor dourada para o autor da citação */
+    text-transform: uppercase;
+}
+
+/* --- Botão Call-to-Action --- */
+.cta-container {
+    text-align: left; /* Alinha o botão à esquerda, conforme a imagem */
+}
+
+.btn-tour {
+    display: inline-block;
+    background-color: #8b6d31; /* Cor de fundo dourada mais escura do botão */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 25px; /* Bordas arredondadas do botão */
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+.btn-tour:hover {
+    background-color: #b3965a; /* Cor dourada mais clara ao passar o mouse */
+}
+
+/* Reaproveitando suas classes da exposição anterior */
+
+.image-frame {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 0px; /* Mantendo seu gosto de sem padding */
+    border: 2px solid #b3965a;
+    box-shadow: 8px 8px 0px #b3965a; /* Sombra sólida igual à anterior */
+    margin-bottom: 20px;
+}
+
+/* Garante que o container flexível alinhe bem os dois blocos */
+.exposicao-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+/* Ajuste do botão para arredondado */
+.btn-tour {
+    display: inline-block;
+    background-color: #8b6d31;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px; /* Formato de pílula da foto */
+    font-weight: bold;
+    font-family: "Georgia", serif;
+}
+
+/* --- SEÇÃO ESCURA (Apoio e Fale Conosco) --- */
+.section-dark {
+    background-color: #121212; /* Preto suave */
+    color: #ffffff;
+    padding: 80px 0;
+    border-top: 2px solid #c5a059; /* Linha dourada separando do conteúdo anterior */
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+.contact-box {
+    flex: 1;
+    max-width: 450px;
+}
+
+.contact-box h3 {
+    color: #c5a059; /* Dourado */
+    font-family: "Georgia", serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    font-family: "Georgia", serif;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Botão Vazado (Outline) */
+.btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+/* --- SEÇÃO CLARA (Logos) --- */
+.section-light {
+    background-color: #f2eee3; /* Mesmo bege das exposições */
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 2px solid #c5a059; /* Linha dourada separando do conteúdo anterior */
+}
+
+.section-light h2 {
+    color: #8b6914;
+    font-family: "Georgia", serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para não quebrar em telas menores */
+}
+
+.logos-row img {
+    max-height: 60px; /* Mantém todos os logos com a mesma altura visual */
+    filter: grayscale(100%); /* Efeito opcional: logos em P&B */
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.logos-row img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/* Layout da Bio */
+.bio-layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+/* Moldura da Foto com Sombra Sólida (Igual à imagem 1) */
+.bio-image-wrapper {
+    flex: 1;
+    border: 2px solid #b3965a;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 10px 10px 0px #b3965a; /* Sombra sólida deslocada */
+    max-width: 300px;
+}
+
+.profile-photo {
+    width: 100%;
+    display: block;
+}
+
+.bio-text-content {
+    flex: 2;
+}
+
+/* Estilização das Tags de Hobbies */
+.hobbies-list {
+    display: flex;
+    flex-wrap: wrap; /* Faz as tags quebrarem de linha */
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.hobbies-list li {
+    background-color: #8b6d31; /* Cor marrom das tags */
+    color: #fff;
+    padding: 8px 28px;
+    border-radius: 50px; /* Deixa as tags em formato de pílula */
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.hobbies-list li:hover {
+    transform: scale(1.05); /* Pequeno efeito ao passar o mouse */
+    background-color: #b3965a;
+    transform: scale(1.1);
+}
+
+/* Título de Hobbies com linha embaixo */
+.bio-text-content h3 {
+    border-bottom: 2px solid #b3965a;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #8b6d31;
+}
+
+/* Subtítulo em dourado */
+.subtitle {
+    color: #b3965a;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- RODAPÉ (FOOTER DARK) --- */
+.footer-dark {
+    background-color: #121212; /* Cor preta suave para o fundo */
+    color: #f2eee3;            /* Cor bege clara para o texto */
+    padding: 40px 0;           /* Espaçamento interno em cima e embaixo */
+    text-align: center;        /* Centraliza o texto */
+    border-top: 1px solid #b3965a; /* Linha dourada de separação no topo */
+}
+
+.footer-dark p {
+    font-family: "Georgia", serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.footer-dark strong {
+    color: #b3965a; /* Destaque dourado para o nome do Museu */
+}
+
+/* Aplicando ao seu novo ID de parágrafo no rodapé */
+#copyright {
+    color: #faf7f2; /* A cor que você escolheu */
+    font-family: "Georgia", serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.8; /* Um toque de transparência para ficar mais elegante */
+    margin: 0 auto;       /* Centraliza o bloco do parágrafo */
+    text-align: center;   /* Centraliza o texto dentro do parágrafo */
+    max-width: 800px;
+}
+
+/* Destaque para o nome do Museu dentro do parágrafo */
+#copyright strong {
+    color: #b3965a; /* Mantém o dourado no nome do museu */
+}
+
+/* Animações para os links de exposições do <nav> */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 70px; /* Ajuste esse valor de acordo com a altura do seu menu fixo */
+}
+
+
+
+
+
+
+
+/*RESPONSIVIDADE MOBILE*/
+@media screen and (max-width: 600px) {
+    /* Menu vira coluna */
+    #main-nav ul {
+        flex-direction: column;
+    }
+    
+    /* Tudo que é flex vira coluna */
+    .container-about,
+    .exposicao-content,
+    .bio-layout,
+    .footer-flex {
+        flex-direction: column;
+    }
+    
+    /* Ajusta tamanhos */
+    h1 { font-size: 2rem; }
+    .brand { font-size: 3rem; }
+    h2 { font-size: 1.8rem; }
+    
+    /* Imagens não quebram */
+    img { max-width: 100%; height: auto; }
+    
+    /* Logos */
+    .logos-row { flex-wrap: wrap; }
+}
+
