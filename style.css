@@ -624,9 +624,8 @@ section {
         border-color: #c5a059;
         color: #121212;
     }
-}
-@media screen and (max-width: 600px) {
-    #main-nav {
+
+        #main-nav {
         position: relative; /* Outra opção: mantém no fluxo mas permite ajustes */
         top: auto; /* Remove o posicionamento fixo */
     }
